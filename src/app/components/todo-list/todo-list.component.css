@@ -1,0 +1,148 @@
+.todo-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.add-task-form {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.add-task-form input[type="text"] {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+}
+
+.add-task-form input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.add-task-form button {
+  padding: 0.75rem 1.25rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.add-task-form button:hover {
+  background-color: #0056b3;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.task-list li:last-child {
+  border-bottom: none;
+}
+
+.task-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.task-list li.completed .task-title {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.task-title {
+  cursor: pointer;
+  flex-grow: 1;
+  margin-right: 1rem;
+}
+
+.task-list input[type="checkbox"] {
+  margin-left: auto; /* Alinea el checkbox a la derecha */
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.empty-message {
+  text-align: center;
+  color: #777;
+  margin-top: 1rem;
+}
+
+/* Estilos para el tema oscuro */
+:host-context(.dark-theme) .todo-container {
+  background-color: #3a3a3a; /* Un gris oscuro para el contenedor */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+}
+
+:host-context(.dark-theme) .todo-container h2 {
+  color: #f0f0f0; /* Texto más claro para el título */
+}
+
+:host-context(.dark-theme) .add-task-form input[type="text"] {
+  background-color: #444; /* Fondo oscuro para el input */
+  border-color: #555; /* Borde más oscuro */
+  color: #f0f0f0; /* Texto claro */
+}
+
+:host-context(.dark-theme) .add-task-form input[type="text"]::placeholder {
+  color: #aaa; /* Placeholder más claro */
+}
+
+:host-context(.dark-theme) .add-task-form input[type="text"]:focus {
+  border-color: #0098ff; /* Un azul más brillante para el foco */
+  box-shadow: 0 0 0 0.2rem rgba(0,152,255,.35);
+}
+
+:host-context(.dark-theme) .add-task-form button {
+  background-color: #0098ff; /* Azul más brillante para el botón */
+  color: #fff;
+}
+
+:host-context(.dark-theme) .add-task-form button:hover {
+  background-color: #007acc;
+}
+
+:host-context(.dark-theme) .task-list li {
+  border-bottom-color: #4f4f4f; /* Borde más oscuro para los items */
+}
+
+:host-context(.dark-theme) .task-list li:hover {
+  background-color: #4a4a4a; /* Fondo ligeramente más claro al pasar el mouse */
+}
+
+:host-context(.dark-theme) .task-list li.completed .task-title {
+  color: #888; /* Color más oscuro para texto tachado */
+}
+
+:host-context(.dark-theme) .task-title {
+  color: #e0e0e0; /* Texto principal de la tarea más claro */
+}
+
+:host-context(.dark-theme) .empty-message {
+  color: #bbb; /* Mensaje de "no hay tareas" más claro */
+}

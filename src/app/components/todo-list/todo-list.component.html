@@ -1,0 +1,17 @@
+<div class="todo-container">
+  <h2>Mi Lista de Tareas</h2>
+
+  <div class="add-task-form">
+    <input type="text" [(ngModel)]="newTaskTitle" placeholder="Añadir nueva tarea" (keyup.enter)="addTask()">
+    <button (click)="addTask()">Añadir</button>
+  </div>
+
+  <ul class="task-list">
+    <li *ngFor="let task of tasks" [class.completed]="task.completed">
+      <span (click)="toggleTaskCompletion(task)" class="task-title">{{ task.title }}</span>
+      <input type="checkbox" [checked]="task.completed" (change)="toggleTaskCompletion(task)">
+    </li>
+  </ul>
+
+  <p *ngIf="tasks.length === 0" class="empty-message">No hay tareas pendientes.</p>
+</div>
